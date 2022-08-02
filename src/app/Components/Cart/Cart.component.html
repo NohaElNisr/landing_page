@@ -1,0 +1,22 @@
+<div class="d-flex ">
+  <p style="font-weight: bold ;font-size: 30px;" class="mx-5">Discover Course & BootCamp</p>
+  <button type="button"  class="btn  mt-3"style="border-color: pink ;
+  color:pink" >Show All</button>
+</div>
+
+<div class="mb-3 mx-5" >
+  <label for="" class="form-label"></label>
+  
+  <select class="form-control" name="cat" id="catsel" [(ngModel)]="selectedcatID">
+      <option value="0"> All Program</option>
+      <option *ngFor="let item of catList" [value]="item.ID">
+          {{item.Name}}
+      </option>
+  </select>
+  </div>  
+ 
+
+  <hr class="mx-5">
+  <div class="mx-5">
+      <app-Course [receivedSelectedCatID]="selectedcatID"> </app-Course>
+  </div>
